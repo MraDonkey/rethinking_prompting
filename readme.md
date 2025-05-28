@@ -12,7 +12,7 @@ Recently, scaling test-time compute on Large Language Models (LLM) has garnered 
 
 ### Contributions
 
-1. **Comprehensive experiments.** Our study covers a wide range - 6 LLMs $\times$ 8 prompting sbenchmarks, providing sufficient evidence and context to fully support the claim.
+1. **Comprehensive experiments.** Our study covers a wide range - 6 LLMs $\times$ 8 prompting strategies $\times$ 6 benchmarks, providing sufficient evidence and context to fully support the claim.
 2. **Valuable findings breaking the conventional wisdom.** Our extensive experiments consistently demonstrate that a complex prompting strategy with higher pass@1 accuracy may not always be better as test-time scaling, while simple CoT/DiP gradually dominates even if with an initial inferior performance. 
 3. **Rigorous theoretical analysis.** We provide an in-depth probability theoretic backed explanation of what leads to more rapid improvements with scale.
    - 3.1 **Definition of easy and hard questions by answer distribution.** The difficulty of the question is not only related to pass@1 accuracy, but determined by the probability distribution of all possible answer outputs. The accuracy of easy questions increases as scaling while hard questions reduces. 
