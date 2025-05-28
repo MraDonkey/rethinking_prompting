@@ -1,0 +1,4 @@
+datasets==3.2.0
+openai==1.53.0
+vllm==0.8.4
+protobuf==5.26.1
