@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 
-## Brief Introduction 📑
+## 📑 Brief Introduction 
 
 ### Abstract
 Recently, scaling test-time compute on Large Language Models (LLM) has garnered wide attention. However, there has been limited investigation of how various reasoning prompting strategies perform as scaling. In this paper, we focus on a standard and realistic scaling setting: majority voting. We systematically conduct experiments on 6 LLMs $\times$ 8 prompting strategies $\times$ 6 benchmarks. Experiment results consistently show that as the sampling time and computational overhead increase, complicated prompting strategies with superior initial performance gradually fall behind simple Chain-of-Thought. We analyze this phenomenon and provide theoretical proofs. Additionally, we propose a probabilistic method to efficiently predict scaling performance and identify the best prompting strategy under large sampling times, eliminating the need for resource-intensive inference processes in practical applications. Furthermore, we introduce two ways derived from our theoretical analysis to significantly improve the scaling performance. We hope that our research can promote to re-examine the role of complicated prompting, unleash the potential of simple prompting strategies, and provide new insights for enhancing test-time scaling performance.
@@ -23,7 +23,7 @@ Recently, scaling test-time compute on Large Language Models (LLM) has garnered 
    - 5.2 **Dynamically selecting the optimal prompting strategy based on our theory.**
 
 
-## Features 🔍
+## 🔍 Features 
 
 - Support for multiple LLM backends (VLLM, Gemini, OpenAI and other API-based models)
   - You can specify **any model** according to your needs.
@@ -54,7 +54,7 @@ Recently, scaling test-time compute on Large Language Models (LLM) has garnered 
   - Sampling time
   - Computation overhead (Cost)
 
-## Installation 🛠️
+## 🛠️ Installation 
 
 1. Clone the repository:
 ```bash
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 pip install -q -U google-generativeai
 ```
 
-## Configuration ⚙️
+## ⚙️ Configuration 
 
 Before running the framework, you need to set up your API keys for different LLM providers:
 
@@ -84,7 +84,7 @@ Before running the framework, you need to set up your API keys for different LLM
   
 Complete the variables `hf_token` in `main.py` and `base_path` in `dataset.py`.
 
-## Usage 🪛
+## 🪛 Usage 
 
 For example, to get the inference results of all prompting strategies with Qwen2.5-7B-Instruct on GSM8K, you can run this script.
 
@@ -94,7 +94,7 @@ bash scripts/Qwen_GSM8K.sh
 
 You can further customize hyperparameters to suit your specific requirements.
 
-## Evaluation 🔬
+## 🔬 Evaluation 
 
 To evaluate the performance of all tested prompting strategies:
 
@@ -107,7 +107,7 @@ You can customize the variable `sampling_times` to adjust the points in the figu
 
 ![alt text](image.png)
 
-## Citation ✒️
+## ✒️ Citation 
 
 Should you find our work beneficial to your research, we would appreciate citations to our paper and GitHub stars to support ongoing development. ⭐
 
