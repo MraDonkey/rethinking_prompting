@@ -21,8 +21,8 @@ def get_messages(args):
                 assert len(args.messages[i]) % 2 == 1
                 if args.system != None:
                     messages_i.append({"role": "system", "content": args.system})
-                for i, message in enumerate(args.messages[i]):
-                    messages_i.append({'role': roles[i%2], 'content': message})
+                for j, message in enumerate(args.messages[i]):
+                    messages_i.append({'role': roles[j%2], 'content': message})
                 messages.append(messages_i)
         else:
             for query in args.query:
@@ -37,8 +37,8 @@ def get_messages(args):
             for i in range(len(args.messages)):
                 messages_i = []
                 assert len(args.messages[i]) % 2 == 1
-                for i, message in enumerate(args.messages[i]):
-                    messages_i.append({'role': roles[i%2], 'parts': [message]})
+                for j, message in enumerate(args.messages[i]):
+                    messages_i.append({'role': roles[j%2], 'parts': [message]})
                 messages.append(messages_i)
         else:
             for query in args.query:
