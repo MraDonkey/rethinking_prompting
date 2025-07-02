@@ -99,8 +99,8 @@ You can further customize hyperparameters to suit your specific requirements.
 To evaluate the performance of all tested prompting strategies:
 
 ```bash
+python eval_csv_N.py    --model_name "your_model" --dataset "your_dataset"
 python eval_csv_cost.py --model_name "your_model" --dataset "your_dataset"
-python eval_csv_N.py --model_name "your_model" --dataset "your_dataset"
 ```
 
 You can customize the variable `sampling_times` to adjust the points in the figure, in the style of Figure 1 and 2 in our [paper](https://arxiv.org/abs/2505.10981).
