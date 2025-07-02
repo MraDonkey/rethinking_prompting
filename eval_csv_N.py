@@ -81,14 +81,15 @@ if __name__ == "__main__":
         "gpt-4o-mini": "GPT-4o-mini",
         "Phi-3.5-mini-instruct": "Phi-3.5-mini-Instruct"
     }
-    
+
+    # Maximum sampling time for each LLM, in order to avoid loading files that are recording the current runnning results.
     N_dict = {
         "Qwen2.5-7B-Instruct": 16,
         "Llama-3-8B-Instruct": 16,
-        "glm-4-9b-chat": 5,
-        "gemini-1.5-flash": 5,
-        "gpt-4o-mini": 5,
-        "Phi-3.5-mini-instruct": 100
+        "glm-4-9b-chat": 16,
+        "gemini-1.5-flash": 16,
+        "gpt-4o-mini": 16,
+        "Phi-3.5-mini-instruct": 16
     }
     
     marker_dict = {
