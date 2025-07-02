@@ -82,17 +82,6 @@ if __name__ == "__main__":
         "Phi-3.5-mini-instruct": "Phi-3.5-mini-Instruct"
     }
     
-    labels_normal = {
-        "io": "DiP",
-        "cot": "CoT",
-        "Least-to-Most": "L2M",
-        "tot-cot0": "ToT",
-        "self-refine": "S-RF",
-        "analogous": "AnP",
-        "SBP": "SBP",
-        "MAD": "MAD",
-    }
-    
     N_dict = {
         "Qwen2.5-7B-Instruct": 16,
         "Llama-3-8B-Instruct": 16,
