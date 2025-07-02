@@ -306,6 +306,7 @@ if __name__ == "__main__":
                                 output_keys = [output for output in output_keys if output != None]
                                 if len(output_keys) == 0:
                                     output_keys = [None]
+                                if count == 0:
                                     prompt_tokens = []
                                     completion_tokens = []
                                     for k in range(0, len(logs_list)):
