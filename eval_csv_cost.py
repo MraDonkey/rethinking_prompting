@@ -78,7 +78,7 @@ if __name__ == "__main__":
     S_RF_max =  10    ## maximum round of S-RF
     MAD_max =   10    ## maximum round of MAD
     
-    sampling_time = [1, 3, 5, 7, 10, 12, 15]
+    sampling_times = [1, 3, 5, 7, 10, 12, 15]
     
     model_names_formal = {
         "Qwen2.5-7B-Instruct": "Qwen2.5-7B-Instruct",
@@ -224,7 +224,7 @@ if __name__ == "__main__":
                         args.n = m
                         logs = read_logs(args)
                         logs_list.append(logs)
-                        if (m+1) not in sampling_time:
+                        if (m+1) not in sampling_times:
                             continue
                         
                     elif args.reasoning in ["S-RF", "MAD"]:
