@@ -126,11 +126,11 @@ if __name__ == "__main__":
     
     if args.model_name in wb.sheetnames:
         ws_new = wb[args.model_name]
-        ws_new.delete_rows(1, ws_new.max_row)  
-        ws_new.delete_cols(1, ws_new.max_column)  
+        # ws_new.delete_rows(1, ws_new.max_row)  
+        # ws_new.delete_cols(1, ws_new.max_column)  
     else:
         ws_new = wb.create_sheet(args.model_name)
-        ws_new.append(headers)
+    ws_new.append(headers)
 
     reasonings = ["DiP", "CoT", "L2M", "SBP", "AnP", "S-RF", "ToT_3", "ToT_5", "ToT_10", "MAD"]
 
