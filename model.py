@@ -113,7 +113,8 @@ def gpt_parallel_generate(args, message):
         model=args.model_name,
         messages = message,
         n = args.num,
-        logprobs = True
+        logprobs = True,
+        max_tokens = args.max_new_tokens
         )
     for i in range(0, args.num):
         output = res.choices[i].message.content
@@ -154,18 +155,22 @@ def LLM_generate(args):
                 records_ = args.model.get_response(messages[i], args.system, args.num)
                 records.append(records_)
         else:
+            records = [None] * len(messages) 
             with ThreadPoolExecutor(max_workers=args.max_num_workers) as executor:
-                future_to_url = {executor.submit(args.model.get_response, message, args.system, args.num): message for message in messages}
+                future_to_index = {}
+                for index, message in enumerate(messages):
+                    future = executor.submit(args.model.get_response, message, args.system, args.num)
+                    future_to_index[future] = index
                 with tqdm(total=len(messages)) as pbar:
-                    for future in as_completed(future_to_url):
-                        url = future_to_url[future]
+                    for future in as_completed(future_to_index):
+                        idx = future_to_index[future]  
                         try:
                             data = future.result()
-                            records.append(data)
+                            records[idx] = data  
                             pbar.update(1)
                         except Exception as exc:
-                            print(f'{url} generated an exception: {exc}')
-                            pdb.set_trace()
+                            print(f'Index {idx} generated exception: {exc}')
+                            pdb.set_trace()    
                 
         for i in range(0, len(messages)):
             for j in range(0, args.num):
@@ -176,31 +181,35 @@ def LLM_generate(args):
                 records[i][j]["output_key"] = output_key
                 
     elif args.model_type == "openai":
-        if "gpt" in args.model_name:
-            if args.max_num_workers == 1:
-                for i in tqdm(range(0, len(messages))):
-                    records_i = gpt_parallel_generate(args, messages[i])
-                    records.append(records_i)
+        if args.max_num_workers == 1:
+            for i in tqdm(range(0, len(messages))):
+                records_i = gpt_parallel_generate(args, messages[i])
+                records.append(records_i)
+        else:
+            records = [None] * len(messages) 
             with ThreadPoolExecutor(max_workers=args.max_num_workers) as executor:
-                future_to_url = {executor.submit(gpt_parallel_generate, args, message): message for message in messages}
+                future_to_index = {}
+                for index, message in enumerate(messages):
+                    future = executor.submit(gpt_parallel_generate, args, message)
+                    future_to_index[future] = index
                 with tqdm(total=len(messages)) as pbar:
-                    for future in as_completed(future_to_url):
-                        url = future_to_url[future]
+                    for future in as_completed(future_to_index):
+                        idx = future_to_index[future]  
                         try:
                             data = future.result()
-                            records.append(data)
+                            records[idx] = data  
                             pbar.update(1)
                         except Exception as exc:
-                            print(f'{url} generated an exception: {exc}')
-                            pdb.set_trace()
-                            
-            for i in range(0, len(messages)):
-                for j in range(0, args.num):
-                    if "tot" in args.reasoning:
-                        output_key = parse_best_solution(records[i][j]["output"])
-                    else:
-                        output_key = parse_answer(args, records[i][j]["output"])
-                    records[i][j]["output_key"] = output_key
+                            print(f'Index {idx} generated exception: {exc}')
+                            pdb.set_trace()    
+                        
+        for i in range(0, len(messages)):
+            for j in range(0, args.num):
+                if "tot" in args.reasoning:
+                    output_key = parse_best_solution(records[i][j]["output"])
+                else:
+                    output_key = parse_answer(args, records[i][j]["output"])
+                records[i][j]["output_key"] = output_key
                     
     elif args.model_type == "vllm":
         from vllm import SamplingParams
