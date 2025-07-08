@@ -377,6 +377,7 @@ if __name__ == "__main__":
             examples = []
             args.questions = []
             args.choiceses = []
+            args.subjects = []
             range_ = range(ii, min(len(dataset_list), ii + args.batchsize))
             args.records_tot = []
             for i in range_:
@@ -394,19 +395,9 @@ if __name__ == "__main__":
                 elif args.dataset == "GPQA":
                     args.questions.append(example['problem'])
                     args.choiceses.append(example['choices'])
-                    args.subject = example["subject"].lower()
+                    args.subjects.append(example["subject"].lower())
                     example["question"] = example.pop("problem")
                     example["key"] = example["answer"]
-                elif args.dataset == "CommonSenseQA":
-                    question = example["question"]["stem"]
-                    args.questions.append(question)
-                    choices = [choice["text"] for choice in example["question"]["choices"]]
-                    args.choiceses.append(choices)
-                    args.subject = "commonsense"
-                    example["key"] = example.pop("answerKey")
-                    example["question"] = question
-                    example["choices"] = choices
-                    example.pop("id")
                 elif args.dataset == "GSM-Hard":
                     args.questions.append(example["input"])
                     example["question"] = example.pop("input")
@@ -417,7 +408,7 @@ if __name__ == "__main__":
                     example["key"] = example.pop("answer")  
                 elif "MMLU" in args.dataset:
                     args.questions.append(example["question"]) 
-                    args.subject = example["subject"]
+                    args.subjects.append(example["subject"])
                     args.choiceses.append(example["choices"])
                     example["key"] = letters[example.pop("answer")]     
                 elif args.dataset == "AIME_2024":
@@ -454,6 +445,7 @@ if __name__ == "__main__":
             examples = []
             args.questions = []
             args.choiceses = []
+            args.subjects = []
             args.records_tot = []
             for i in range_:
                 if "tot" in args.reasoning:
@@ -470,18 +462,8 @@ if __name__ == "__main__":
                 elif args.dataset == "GPQA":
                     args.questions.append(example['problem'])
                     args.choiceses.append(example['choices'])
-                    args.subject = example["subject"].lower()
+                    args.subjects.append(example["subject"].lower())
                     example["key"] = example["answer"]
-                elif args.dataset == "CommonSenseQA":
-                    question = example["question"]["stem"]
-                    args.questions.append(question)
-                    choices = [choice["text"] for choice in example["question"]["choices"]]
-                    args.choiceses.append(choices)
-                    args.subject = "commonsense"
-                    example["key"] = example.pop("answerKey")
-                    example["question"] = question
-                    example["choices"] = choices
-                    example.pop("id")
                 elif args.dataset == "GSM-Hard":
                     args.questions.append(example["input"])
                     example["question"] = example.pop("input")
@@ -492,7 +474,7 @@ if __name__ == "__main__":
                     example["key"] = example.pop("answer")  
                 elif "MMLU" in args.dataset:
                     args.questions.append(example["question"]) 
-                    args.subject = example["subject"]
+                    args.subjects.append(example["subject"])
                     args.choiceses.append(example["choices"])
                     example["key"] = letters[example.pop("answer")]     
                 elif args.dataset == "AIME_2024":
