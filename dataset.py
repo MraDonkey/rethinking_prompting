@@ -259,16 +259,16 @@ def create_prompt(args, index = None):
                     prompt = GPQA.tot_10_solutions.format(question=args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], solution1 = args.records_tot[i][0]["output"], solution2 = args.records_tot[i][1]["output"], solution3 = args.records_tot[i][2]["output"], solution4 = args.records_tot[i][3]["output"], solution5 = args.records_tot[i][4]["output"], solution6 = args.records_tot[i][5]["output"], solution7 = args.records_tot[i][6]["output"], solution8 = args.records_tot[i][7]["output"], solution9 = args.records_tot[i][8]["output"], solution10 = args.records_tot[i][9]["output"]) + GPQA.tot_post
             elif args.reasoning == "AnP":
                 if args.shot == 1:
-                    prompt = GPQA.anologous_1_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = GPQA.anologous_1_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 elif args.shot == 3:
-                    prompt = GPQA.anologous_3_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = GPQA.anologous_3_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 elif args.shot == 5:
-                    prompt = GPQA.anologous_5_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = GPQA.anologous_5_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
             elif args.reasoning == "SBP":
                 if "principles" not in args:
-                    prompt = GPQA.SBP_extract.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = GPQA.SBP_extract.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 else:
-                    prompt = GPQA.SBP_answer.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
+                    prompt = GPQA.SBP_answer.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
                     
         elif "MMLU" in args.dataset:
             args.choices = args.choiceses[i]
@@ -290,26 +290,26 @@ def create_prompt(args, index = None):
                     prompt = MMLU.tot_10_solutions.format(question=args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], solution1 = args.records_tot[i][0]["output"], solution2 = args.records_tot[i][1]["output"], solution3 = args.records_tot[i][2]["output"], solution4 = args.records_tot[i][3]["output"], solution5 = args.records_tot[i][4]["output"], solution6 = args.records_tot[i][5]["output"], solution7 = args.records_tot[i][6]["output"], solution8 = args.records_tot[i][7]["output"], solution9 = args.records_tot[i][8]["output"], solution10 = args.records_tot[i][9]["output"]) + MMLU.tot_post
             elif args.reasoning == "AnP":
                 if args.shot == 1:
-                    prompt = MMLU.anologous_1_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = MMLU.anologous_1_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 elif args.shot == 3:
-                    prompt = MMLU.anologous_3_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = MMLU.anologous_3_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 elif args.shot == 5:
-                    prompt = MMLU.anologous_5_prompt.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    prompt = MMLU.anologous_5_prompt.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
             elif args.reasoning == "SBP":
                 if "principles" not in args:
-                    if "physics" in args.subject:
-                        prompt = MMLU.SBP_extract_physics.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
-                    elif "chemistry" in args.subject:
-                        prompt = MMLU.SBP_extract_chemistry.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    if "physics" in args.subjects[i]:
+                        prompt = MMLU.SBP_extract_physics.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                    elif "chemistry" in args.subjects[i]:
+                        prompt = MMLU.SBP_extract_chemistry.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                     else:
-                        prompt = MMLU.SBP_extract.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
+                        prompt = MMLU.SBP_extract.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3])
                 else:
-                    if "physics" in args.subject:
-                        prompt = MMLU.SBP_answer_physics.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
-                    elif "chemistry" in args.subject:
-                        prompt = MMLU.SBP_answer_chemistry.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
+                    if "physics" in args.subjects[i]:
+                        prompt = MMLU.SBP_answer_physics.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
+                    elif "chemistry" in args.subjects[i]:
+                        prompt = MMLU.SBP_answer_chemistry.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
                     else:
-                        prompt = MMLU.SBP_answer.format(subject = args.subject, question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
+                        prompt = MMLU.SBP_answer.format(subject = args.subjects[i], question = args.question, choice1 = args.choices[0], choice2 = args.choices[1], choice3 = args.choices[2], choice4 = args.choices[3], principles = args.principles)
                         
         elif args.dataset == "MATH":
             if args.reasoning == "DiP":
