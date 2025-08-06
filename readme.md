@@ -1,4 +1,4 @@
-# [ACL 2025 Main] Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory
+# [ACL 2025 Main] (🏆Outstanding Paper Award) Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory
 
 ### Paper: [https://arxiv.org/abs/2505.10981](https://arxiv.org/abs/2505.10981)
 
