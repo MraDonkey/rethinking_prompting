@@ -1,7 +1,5 @@
 <div align="center">
-<h1>Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: 
-
-A Perspective of Probability Theory</h1>
+<h1>Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory</h1>
 
 <div>
     <a href='https://scholar.google.com/citations?user=QbruFjMAAAAJ' target='_blank'>Yexiang Liu</a><sup>1,2</sup>&emsp;
