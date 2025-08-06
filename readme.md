@@ -1,10 +1,30 @@
-# [ACL 2025 Main] (🏆Outstanding Paper Award) 
+<div align="center">
+<h1>Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: 
 
-## Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory
+A Perspective of Probability Theory</h1>
 
-### Paper: [https://arxiv.org/abs/2505.10981](https://arxiv.org/abs/2505.10981)
+<div>
+    <a href='https://scholar.google.com/citations?user=QbruFjMAAAAJ' target='_blank'>Yexiang Liu</a><sup>1,2</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=MD61m08AAAAJ' target='_blank'>Zekun Li</a><sup>1,4</sup>&emsp;
+    <a target='_blank'> Zhi Fang</a><sup>1,2</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=oJcp__wAAAAJ' target='_blank'>Nan Xu</a><sup>3</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=ayrg9AUAAAAJ' target='_blank'>Ran He</a><sup>3</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=W-FGd_UAAAAJ' target='_blank'>Tieniu Tan</a><sup>3</sup>&emsp;
+</div>
+<div>
+    <sup>1</sup>MAIS, Institute of Automation, Chinese Academy of Sciences&emsp;<br>
+    <sup>2</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences&emsp;<br>
+    <sup>3</sup>University of California, Santa Barbara&emsp;<br>
+    <sup>4</sup>Beijing Wenge Technology Co., Ltd&emsp;   <sup>5</sup>Nanjing University
+</div>
+<div>
+</div>
+<div>
+    <strong>ACL 2025 Main 🏆 Outstanding Paper Award</strong>
+</div>
+<br>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Conference](https://img.shields.io/badge/ACL_2025-Outstanding%20Paper%20Award-ed1c24?style=flat&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgo8c3ZnCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4wIgogICB3aWR0aD0iNjgiCiAgIGhlaWdodD0iNjgiCiAgIGlkPSJzdmcyIj4KICA8ZGVmcwogICAgIGlkPSJkZWZzNCIgLz4KICA8cGF0aAogICAgIGQ9Ik0gNDEuOTc3NTUzLC0yLjg0MjE3MDllLTAxNCBDIDQxLjk3NzU1MywxLjc2MTc4IDQxLjk3NzU1MywxLjQ0MjExIDQxLjk3NzU1MywzLjAxNTggTCA3LjQ4NjkwNTQsMy4wMTU4IEwgMCwzLjAxNTggTCAwLDEwLjUwMDc5IEwgMCwzOC40Nzg2NyBMIDAsNDYgTCA3LjQ4NjkwNTQsNDYgTCA0OS41MDA4MDIsNDYgTCA1Ni45ODc3MDgsNDYgTCA2OCw0NiBMIDY4LDMwLjk5MzY4IEwgNTYuOTg3NzA4LDMwLjk5MzY4IEwgNTYuOTg3NzA4LDEwLjUwMDc5IEwgNTYuOTg3NzA4LDMuMDE1OCBDIDU2Ljk4NzcwOCwxLjQ0MjExIDU2Ljk4NzcwOCwxLjc2MTc4IDU2Ljk4NzcwOCwtMi44NDIxNzA5ZS0wMTQgTCA0MS45Nzc1NTMsLTIuODQyMTcwOWUtMDE0IHogTSAxNS4wMTAxNTUsMTcuOTg1NzggTCA0MS45Nzc1NTMsMTcuOTg1NzggTCA0MS45Nzc1NTMsMzAuOTkzNjggTCAxNS4wMTAxNTUsMzAuOTkzNjggTCAxNS4wMTAxNTUsMTcuOTg1NzggeiAiCiAgICAgc3R5bGU9ImZpbGw6I2VkMWMyNDtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MTIuODk1NDExNDk7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIgogICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDExKSIKICAgICBpZD0icmVjdDIxNzgiIC8+Cjwvc3ZnPgo=)](https://aclanthology.org/2025.acl-long.1356/)  [![arXiv](https://img.shields.io/badge/arXiv%20paper-2505.10981-b31b1b.svg)](https://arxiv.org/abs/2505.10981)   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 
 ## 📑 Brief Introduction 
@@ -114,10 +134,26 @@ You can customize the variable `sampling_times` to adjust the points in the figu
 Should you find our work beneficial to your research, we would appreciate citations to our paper and GitHub stars to support ongoing development. ⭐
 
 ```bibtex
-@article{liu2025rethinking,
-  title={Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory},
-  author={Liu, Yexiang and Li, Zekun and Fang, Zhi and Xu, Nan and He, Ran and Tan, Tieniu},
-  journal={arXiv preprint arXiv:2505.10981},
-  year={2025}
+@inproceedings{liu-etal-2025-rethinking,
+    title = "Rethinking the Role of Prompting Strategies in {LLM} Test-Time Scaling: A Perspective of Probability Theory",
+    author = "Liu, Yexiang  and
+      Li, Zekun  and
+      Fang, Zhi  and
+      Xu, Nan  and
+      He, Ran  and
+      Tan, Tieniu",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.1356/",
+    doi = "10.18653/v1/2025.acl-long.1356",
+    pages = "27962--27994",
+    ISBN = "979-8-89176-251-0"
 }
 ```
