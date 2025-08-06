@@ -1,19 +1,22 @@
 <div align="center">
-<h1>Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory</h1>
+<h1>Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: 
+
+A Perspective of Probability Theory</h1>
 
 <div>
     <a href='https://scholar.google.com/citations?user=QbruFjMAAAAJ' target='_blank'>Yexiang Liu</a><sup>1,2</sup>&emsp;
-    <a href='https://scholar.google.com/citations?user=MD61m08AAAAJ' target='_blank'>Zekun Li</a><sup>1,4</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=MD61m08AAAAJ' target='_blank'>Zekun Li</a><sup>3</sup>&emsp;
     <a target='_blank'> Zhi Fang</a><sup>1,2</sup>&emsp;
-    <a href='https://scholar.google.com/citations?user=oJcp__wAAAAJ' target='_blank'>Nan Xu</a><sup>3</sup>&emsp;
-    <a href='https://scholar.google.com/citations?user=ayrg9AUAAAAJ' target='_blank'>Ran He</a><sup>3</sup>&emsp;
-    <a href='https://scholar.google.com/citations?user=W-FGd_UAAAAJ' target='_blank'>Tieniu Tan</a><sup>3</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=oJcp__wAAAAJ' target='_blank'>Nan Xu</a><sup>1,4</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=ayrg9AUAAAAJ' target='_blank'>Ran He</a><sup>1,2*</sup>&emsp;
+    <a href='https://scholar.google.com/citations?user=W-FGd_UAAAAJ' target='_blank'>Tieniu Tan</a><sup>1,2,5</sup>&emsp;
 </div>
 <div>
     <sup>1</sup>MAIS, Institute of Automation, Chinese Academy of Sciences&emsp;<br>
     <sup>2</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences&emsp;<br>
     <sup>3</sup>University of California, Santa Barbara&emsp;<br>
-    <sup>4</sup>Beijing Wenge Technology Co., Ltd&emsp;   <sup>5</sup>Nanjing University
+    <sup>4</sup>Beijing Wenge Technology Co., Ltd&emsp;   <sup>5</sup>Nanjing University<br>
+    *Corresponding Author
 </div>
 <div>
 </div>
