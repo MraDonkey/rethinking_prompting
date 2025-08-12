@@ -68,10 +68,11 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default=model_names[0])
     parser.add_argument("--dataset", type=str, default=datasets[0])
     parser.add_argument("--split", type=str, default="test")
+    parser.add_argument("--shuffle", type=bool, default=True)
     args = parser.parse_args()
     
     sampling_times = [1, 3, 5, 7, 10, 15]
-    pos = - sampling_times[-1] / 30
+    pos = - sampling_times[-1] / (sampling_times[-1]/15 * 30)
     
     model_names_formal = {
         "Qwen2.5-7B-Instruct": "Qwen2.5-7B-Instruct",
@@ -255,6 +256,8 @@ if __name__ == "__main__":
                     completion_tokens_ = 0
                     l = len(logs_list[0])
                     for count in range(0, 5):
+                        if args.shuffle:
+                            random.shuffle(logs_list)
                         acc_num = 0
                         if args.dataset in ["GSM8K", "GSM-Hard", "MATH", "AIME_2024"]:
                             subject = "mathematic"
