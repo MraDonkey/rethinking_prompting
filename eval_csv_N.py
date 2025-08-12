@@ -72,7 +72,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     sampling_times = [1, 3, 5, 7, 10, 15]
-    pos = - sampling_times[-1] / (sampling_times[-1]/15 * 30)
+    pos = - sampling_times[-1] / 30 * sampling_times[-1]/15
     
     model_names_formal = {
         "Qwen2.5-7B-Instruct": "Qwen2.5-7B-Instruct",
