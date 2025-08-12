@@ -68,6 +68,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default=model_names[0])
     parser.add_argument("--dataset", type=str, default=datasets[0])
     parser.add_argument("--split", type=str, default="test")
+    parser.add_argument("--shuffle", type=bool, default=True)
     args = parser.parse_args()
     
     DiP_max =   100   ## maximum sampling time of DiP
@@ -252,6 +253,7 @@ if __name__ == "__main__":
                     l = len(logs_list[0])
                     
                     for count in range(0, 5):
+                        random.shuffle(logs_list)
                         acc_num = 0
                         if args.dataset in ["GSM8K", "GSM-Hard", "MATH", "AIME_2024"]:
                             subject = "mathematic"
