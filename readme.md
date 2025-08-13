@@ -88,7 +88,6 @@ cd rethinking_prompting
 conda create -n rethinking_prompting  python=3.11
 conda activate rethinking_prompting
 pip install -r requirements.txt
-pip install -q -U google-generativeai
 ```
 
 ## ⚙️ Configuration 
